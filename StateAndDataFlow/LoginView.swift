@@ -9,12 +9,17 @@ import SwiftUI
 
 struct LoginView: View {
     @State private var name = ""
+    @State private var lettersCounter = 0
     @EnvironmentObject private var userSettings: UserSettings
     
     var body: some View {
         VStack {
-            TextField("Enter your name", text: $name)
-                .multilineTextAlignment(.center)
+            HStack {
+                TextField("Enter your name", text: $name)
+                    .multilineTextAlignment(.center)
+                Text(lettersCounter.formatted())
+                    .foregroundColor(.red)
+            }
             Button(action: login) {
                 HStack {
                     Image(systemName: "checkmark.circle")
@@ -22,6 +27,7 @@ struct LoginView: View {
                 }
             }
         }
+        .padding()
     }
     
     private func login() {

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var buttonTitleForLogOut = "LogOut"
     @StateObject private var timer = TimeCounter()
     @EnvironmentObject private var userSettings: UserSettings
     
@@ -21,11 +22,18 @@ struct ContentView: View {
                 .padding(.top, 100)
             Spacer()
             
-            ButtonView(timer: timer)
+            ButtonView(name: $timer.buttonTitle, color: .red, action: timer.startTimer)
             
             Spacer()
+            
+            ButtonView(name: $buttonTitleForLogOut, color: .blue, action: logOut)
         }
         .padding()
+    }
+    
+    private func logOut() {
+        userSettings.name = ""
+        userSettings.isLoggedIn.toggle()
     }
 }
 
@@ -37,18 +45,20 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct ButtonView: View {
-    @ObservedObject var timer: TimeCounter
+    @Binding var name: String
+    let color: Color
+    let action: () -> Void
     
     var body: some View {
         
-        Button(action: timer.startTimer) {
-            Text(timer.buttonTitle)
+        Button(action: action) {
+            Text(name)
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
         }
         .frame(width: 200, height: 60)
-        .background(.red)
+        .background(color)
         .cornerRadius(20)
         .overlay(
             RoundedRectangle(cornerRadius: 20)
