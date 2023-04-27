@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var name = ""
     @State private var color = Color.red
+    @State private var isActivated = true
     @EnvironmentObject private var userSettings: UserSettings
     
     var body: some View {
@@ -19,6 +20,7 @@ struct LoginView: View {
                     .multilineTextAlignment(.center)
                     .onChange(of: name) { newValue in
                         color = newValue.count >= 3 ? .green : .red
+                        isActivated = newValue.count >= 3 ? false : true
                     }
                 Text(name.count.formatted())
                     .foregroundColor(color)
@@ -28,6 +30,7 @@ struct LoginView: View {
                     Image(systemName: "checkmark.circle")
                     Text("Ok")
                 }
+                .disabled(isActivated)
             }
         }
         .padding()
