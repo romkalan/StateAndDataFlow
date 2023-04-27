@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @State private var name = ""
-    @State private var lettersCounter = 0
+    @State private var color = Color.red
     @EnvironmentObject private var userSettings: UserSettings
     
     var body: some View {
@@ -17,8 +17,11 @@ struct LoginView: View {
             HStack {
                 TextField("Enter your name", text: $name)
                     .multilineTextAlignment(.center)
-                Text(lettersCounter.formatted())
-                    .foregroundColor(.red)
+                    .onChange(of: name) { newValue in
+                        color = newValue.count >= 3 ? .green : .red
+                    }
+                Text(name.count.formatted())
+                    .foregroundColor(color)
             }
             Button(action: login) {
                 HStack {
