@@ -13,8 +13,8 @@
 		A8B1C6E729F9881D00967803 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B1C6E629F9881D00967803 /* Preview Assets.xcassets */; };
 		A8B1C6EE29F9A14400967803 /* TimeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1C6ED29F9A14400967803 /* TimeCounter.swift */; };
 		A8B1C6F029F9A7B200967803 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1C6EF29F9A7B200967803 /* LoginView.swift */; };
-		A8B1C6F229F9A89300967803 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1C6F129F9A89300967803 /* UserSettings.swift */; };
 		A8B1C6F429F9A97600967803 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1C6F329F9A97600967803 /* RootView.swift */; };
+		AD59C04D29FBCDDE0027D414 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59C04C29FBCDDE0027D414 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +25,8 @@
 		A8B1C6E629F9881D00967803 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A8B1C6ED29F9A14400967803 /* TimeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounter.swift; sourceTree = "<group>"; };
 		A8B1C6EF29F9A7B200967803 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		A8B1C6F129F9A89300967803 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		A8B1C6F329F9A97600967803 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		AD59C04C29FBCDDE0027D414 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +59,10 @@
 		A8B1C6DE29F9881C00967803 /* StateAndDataFlow */ = {
 			isa = PBXGroup;
 			children = (
-				A8B1C6DF29F9881C00967803 /* StateAndDataFlowApp.swift */,
-				A8B1C6E129F9881C00967803 /* ContentView.swift */,
-				A8B1C6F329F9A97600967803 /* RootView.swift */,
-				A8B1C6EF29F9A7B200967803 /* LoginView.swift */,
-				A8B1C6ED29F9A14400967803 /* TimeCounter.swift */,
-				A8B1C6F129F9A89300967803 /* UserSettings.swift */,
+				AD59C05029FBCEC10027D414 /* App */,
+				AD59C04F29FBCEB10027D414 /* Views */,
+				AD59C05129FBCFF00027D414 /* Logic */,
+				AD59C04E29FBCE6D0027D414 /* Sources */,
 				A8B1C6E329F9881D00967803 /* Assets.xcassets */,
 				A8B1C6E529F9881D00967803 /* Preview Content */,
 			);
@@ -77,6 +75,40 @@
 				A8B1C6E629F9881D00967803 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AD59C04E29FBCE6D0027D414 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AD59C04C29FBCDDE0027D414 /* StorageManager.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		AD59C04F29FBCEB10027D414 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A8B1C6F329F9A97600967803 /* RootView.swift */,
+				A8B1C6EF29F9A7B200967803 /* LoginView.swift */,
+				A8B1C6E129F9881C00967803 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AD59C05029FBCEC10027D414 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A8B1C6DF29F9881C00967803 /* StateAndDataFlowApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AD59C05129FBCFF00027D414 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				A8B1C6ED29F9A14400967803 /* TimeCounter.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,8 +184,8 @@
 				A8B1C6EE29F9A14400967803 /* TimeCounter.swift in Sources */,
 				A8B1C6E229F9881C00967803 /* ContentView.swift in Sources */,
 				A8B1C6F429F9A97600967803 /* RootView.swift in Sources */,
+				AD59C04D29FBCDDE0027D414 /* StorageManager.swift in Sources */,
 				A8B1C6F029F9A7B200967803 /* LoginView.swift in Sources */,
-				A8B1C6F229F9A89300967803 /* UserSettings.swift in Sources */,
 				A8B1C6E029F9881C00967803 /* StateAndDataFlowApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

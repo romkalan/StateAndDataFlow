@@ -12,7 +12,7 @@ struct LoginView: View {
     @State private var color = Color.red
     @State private var isActivated = true
     
-    @EnvironmentObject private var userSettings: UserSettings
+    @EnvironmentObject private var storageManager: StorageManager
     
     var body: some View {
         VStack {
@@ -47,8 +47,8 @@ struct LoginView: View {
     
     private func login() {
         if !name.isEmpty {
-            userSettings.name = name
-            userSettings.isLoggedIn.toggle()
+            storageManager.name = name
+            storageManager.isLoggedIn.toggle()
         }
     }
 }

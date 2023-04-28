@@ -11,7 +11,6 @@ import Combine
 final class TimeCounter: ObservableObject {
     var counter = 3
     var buttonTitle = "Start"
-    var buttonLogOut = "LogOut"
     let objectWillChange = ObservableObjectPublisher()
     
     private var timer: Timer?
