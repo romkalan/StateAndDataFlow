@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var buttonTitleForLogOut = "LogOut"
     @StateObject private var timer = TimeCounter()
     @EnvironmentObject private var userSettings: UserSettings
     
@@ -26,7 +25,7 @@ struct ContentView: View {
             
             Spacer()
             
-            ButtonView(name: $buttonTitleForLogOut, color: .blue, action: logOut)
+            ButtonView(name: $timer.buttonLogOut, color: .blue, action: logOut)
         }
         .padding()
     }
@@ -41,6 +40,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(UserSettings())
+            .environmentObject(UserDefaultsSettings())
     }
 }
 

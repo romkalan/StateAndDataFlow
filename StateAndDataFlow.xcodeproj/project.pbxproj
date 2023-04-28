@@ -15,6 +15,7 @@
 		A8B1C6F029F9A7B200967803 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1C6EF29F9A7B200967803 /* LoginView.swift */; };
 		A8B1C6F229F9A89300967803 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1C6F129F9A89300967803 /* UserSettings.swift */; };
 		A8B1C6F429F9A97600967803 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1C6F329F9A97600967803 /* RootView.swift */; };
+		AD59C04729FBA9570027D414 /* UserDefaultsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59C04629FBA9570027D414 /* UserDefaultsSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A8B1C6EF29F9A7B200967803 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A8B1C6F129F9A89300967803 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		A8B1C6F329F9A97600967803 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		AD59C04629FBA9570027D414 /* UserDefaultsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				A8B1C6EF29F9A7B200967803 /* LoginView.swift */,
 				A8B1C6ED29F9A14400967803 /* TimeCounter.swift */,
 				A8B1C6F129F9A89300967803 /* UserSettings.swift */,
+				AD59C04629FBA9570027D414 /* UserDefaultsSettings.swift */,
 				A8B1C6E329F9881D00967803 /* Assets.xcassets */,
 				A8B1C6E529F9881D00967803 /* Preview Content */,
 			);
@@ -153,6 +156,7 @@
 				A8B1C6E229F9881C00967803 /* ContentView.swift in Sources */,
 				A8B1C6F429F9A97600967803 /* RootView.swift in Sources */,
 				A8B1C6F029F9A7B200967803 /* LoginView.swift in Sources */,
+				AD59C04729FBA9570027D414 /* UserDefaultsSettings.swift in Sources */,
 				A8B1C6F229F9A89300967803 /* UserSettings.swift in Sources */,
 				A8B1C6E029F9881C00967803 /* StateAndDataFlowApp.swift in Sources */,
 			);
