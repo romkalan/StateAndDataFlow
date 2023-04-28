@@ -6,8 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class UserSettings: ObservableObject {
-    @Published var isLoggedIn = false
-    var name = ""
+    @AppStorage("isLoggedIn") var isLoggedIn = false {
+        willSet { objectWillChange.send() }
+    }
+    
+    @AppStorage("name") var name = "" {
+        willSet { objectWillChange.send() }
+    }
 }
