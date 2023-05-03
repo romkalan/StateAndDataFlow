@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var buttonLogOutTitle = "LogOut"
     @StateObject private var timer = TimeCounter()
-    @EnvironmentObject private var storageManager: StorageManager
+    @EnvironmentObject private var userManager: UserManager
+    private let storageManager = StorageManager.shared
     
     var body: some View {
         VStack {
-            Text("Hi, \(storageManager.name)")
+            Text("Hi, \(userManager.user.name)")
                 .font(.largeTitle)
                 .padding(.top, 100)
             Text(timer.counter.formatted())
@@ -22,30 +22,28 @@ struct ContentView: View {
                 .padding(.top, 100)
             Spacer()
             
-            ButtonView(name: $timer.buttonTitle, color: .red, action: timer.startTimer)
+            ButtonView(name: timer.buttonTitle, color: .red) {
+                timer.startTimer()
+            }
             
             Spacer()
             
-            ButtonView(name: $buttonLogOutTitle, color: .blue, action: logOut)
+            ButtonView(name: "LogOut", color: .blue) { storageManager.clear(userManager: userManager)
+            }
         }
         .padding()
-    }
-    
-    private func logOut() {
-        storageManager.name = ""
-        storageManager.isLoggedIn.toggle()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(StorageManager())
+            .environmentObject(UserManager())
     }
 }
 
 struct ButtonView: View {
-    @Binding var name: String
+    let name: String
     let color: Color
     let action: () -> Void
 

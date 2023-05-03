@@ -8,48 +8,35 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var name = ""
-    @State private var color = Color.red
-    @State private var isActivated = true
-    
-    @EnvironmentObject private var storageManager: StorageManager
+    @EnvironmentObject private var userManager: UserManager
+    private let storageManager = StorageManager.shared
     
     var body: some View {
         VStack {
             HStack {
-                TextField("Enter your name", text: $name)
+                TextField("Enter your name", text: $userManager.user.name)
                     .multilineTextAlignment(.center)
-                    .onChange(of: name) { newValue in
-                        validate(name: newValue)
-                    }
-                Text(countLetters(in: name).formatted())
-                    .foregroundColor(color)
+                Text(countLetters(in: userManager.user.name).formatted())
+                    .foregroundColor(userManager.nameIsValide ? .green : .red)
             }
-            Button(action: login) {
+            Button(action: registerUser) {
                 HStack {
                     Image(systemName: "checkmark.circle")
                     Text("Ok")
                 }
-                .disabled(isActivated)
+                .disabled(!userManager.nameIsValide)
             }
         }
         .padding()
-    }
-    
-    private func validate(name: String) {
-        color = countLetters(in: name) >= 3 ? .green : .red
-        isActivated = countLetters(in: name) >= 3 ? false : true
     }
     
     private func countLetters(in name: String) -> Int {
         name.filter { $0 != " " }.count
     }
     
-    private func login() {
-        if !name.isEmpty {
-            storageManager.name = name
-            storageManager.isLoggedIn.toggle()
-        }
+    private func registerUser() {
+        userManager.user.isLoggedIn.toggle()
+        storageManager.save(user: userManager.user)
     }
 }
 
