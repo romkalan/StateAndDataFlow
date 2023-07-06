@@ -2,7 +2,7 @@
 //  RootView.swift
 //  StateAndDataFlow
 //
-//  Created by Alexey Efimov on 26.04.2023.
+//  Created by Roman Lantsov on 26.04.2023.
 //
 
 import SwiftUI
